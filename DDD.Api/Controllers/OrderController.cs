@@ -44,7 +44,7 @@ namespace DDD.API.Controllers
         //}
 
 
-        //class OrderService:IOrderService
+        //class OrderService : IOrderService
         //{
         //    public long CreateOrder(CreateOrderModel model)
         //    {

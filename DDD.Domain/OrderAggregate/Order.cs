@@ -25,7 +25,7 @@ namespace DDD.Domain.OrderAggregate
             this.Address = address;
             this.ItemCount = itemCount;
 
-            this.AddDomainEvent(new OrderCreatedDomainEvent(this));
+           this.AddDomainEvent(new OrderCreatedDomainEvent(this));
         }
 
 

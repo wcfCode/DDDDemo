@@ -31,11 +31,11 @@ namespace DDD.API.Extensions
             return services.AddDomainContext(builder => builder.UseInMemoryDatabase("domanContextDatabase"));
         }
 
-        public static IServiceCollection AddMySqlDomainContext(this IServiceCollection services, string connectionString)
+        public static IServiceCollection AddNpgsqlDomainContext(this IServiceCollection services, string connectionString)
         {
             return services.AddDomainContext(builder =>
             {
-                builder.UseMySql(connectionString);
+                builder.UseNpgsql(connectionString);
             });
         }
 
@@ -57,9 +57,13 @@ namespace DDD.API.Extensions
 
                 options.UseRabbitMQ(options =>
                 {
-                    configuration.GetSection("RabbitMQ").Bind(options);
+                    options.HostName = "localhost";
+                    options.UserName = "guest";
+                    options.Password = "guest";
+                    options.VirtualHost = "DDDeEMO";
+                    options.ExchangeName = "ExchangeName";
                 });
-                //options.UseDashboard();
+                options.UseDashboard();
             });
 
             return services;

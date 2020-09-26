@@ -3,6 +3,10 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\WCF713.CONST\Desktop\分享\DDDDemo\DDD.Api\DDD.Api.xml</DocumentationFile>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="DotNetCore.CAP.Dashboard" Version="3.0.0" />
     <PackageReference Include="DotNetCore.CAP.RabbitMQ" Version="3.0.0" />
@@ -11,7 +15,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.0" />
-    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.4" />
     <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc5" />
   </ItemGroup>
@@ -21,5 +25,10 @@
   <ItemGroup>
     <Folder Include="Infrastructure\Auth\" />
     <Folder Include="Infrastructure\Caching\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>
