@@ -15,6 +15,7 @@ namespace DDD.Infrastructure
     {
         public DomainContext(DbContextOptions options, IMediator mediator, ICapPublisher capBus) : base(options, mediator, capBus)
         {
+
         }
 
         public DbSet<Order> Orders { get; set; }

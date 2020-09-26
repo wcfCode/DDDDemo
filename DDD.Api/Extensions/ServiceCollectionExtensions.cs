@@ -53,17 +53,13 @@ namespace DDD.API.Extensions
             services.AddTransient<ISubscriberService, SubscriberService>();
             services.AddCap(options =>
             {
-                options.UseEntityFramework<DomainContext>();
-
+                //options.UseEntityFramework<DomainContext>();
+                options.UsePostgreSql(configuration.GetValue<string>("pgsql"));
                 options.UseRabbitMQ(options =>
                 {
-                    options.HostName = "localhost";
-                    options.UserName = "guest";
-                    options.Password = "guest";
-                    options.VirtualHost = "DDDeEMO";
-                    options.ExchangeName = "ExchangeName";
+                    configuration.GetSection("RabbitMQ").Bind(options);
                 });
-                options.UseDashboard();
+                //options.UseDashboard();
             });
 
             return services;

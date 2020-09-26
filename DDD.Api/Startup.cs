@@ -43,7 +43,7 @@ namespace DDD.Api
             });
      
             services.AddMediatRServices();
-            string a = Configuration.GetValue<string>("pgsql");
+            
             services.AddNpgsqlDomainContext(Configuration.GetValue<string>("pgsql"));
             services.AddRepositories();
             services.AddEventBus(Configuration);
