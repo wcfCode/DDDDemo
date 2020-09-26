@@ -31,6 +31,7 @@ namespace DDD.Domain.OrderAggregate
 
         public void ChangeAddress(Address address)
         {
+            //判断地址的有效性，比如说我在邮寄过程中改地址，会在这判断地址距离是否太远。
             this.Address = address;
             //this.AddDomainEvent(new OrderAddressChangedDomainEvent(this));
         }
