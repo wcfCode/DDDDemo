@@ -24,10 +24,6 @@ namespace DDD.API.Application.IntegrationEvents
         [CapSubscribe("OrderCreated")]
         public void OrderCreated(OrderCreatedIntegrationEvent @event)
         {
-
-            
-
-
             //Do SomeThing
         }
     }
