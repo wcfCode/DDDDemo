@@ -23,10 +23,6 @@
     <ProjectReference Include="..\DDD.Infrastructure\DDD.Infrastructure.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Infrastructure\Auth\" />
-    <Folder Include="Infrastructure\Caching\" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
